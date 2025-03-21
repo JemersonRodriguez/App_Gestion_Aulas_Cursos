@@ -1,0 +1,29 @@
+/* Reseteo de márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    background-color: aqua;
+}
+
+header nav {
+    display: flex;
+}
+
+main {
+    background-color: blue;
+
+}
+
+footer {
+    background-color: black;
+}
