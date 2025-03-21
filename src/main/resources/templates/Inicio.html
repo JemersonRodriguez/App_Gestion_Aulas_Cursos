@@ -11,9 +11,9 @@
         <nav>
             <div class="logo-container"> 
                 <a href="https://github.com/JemersonRodriguez">
-                    <img class="logo" src="./images/icon.svg" alt="Logo Image">
+                    <img style="filter: drop-shadow(2px 4px 6px black);" class="logo" src="./images/git-icon.svg" alt="Logo Image">
                 </a>
-                <h4>Sistema Gestion UCR Siquirres</h4>
+                <h4 style="filter: drop-shadow(2px 4px 6px black);">Sistema Gestion UCR Siquirres</h4>
             </div>
             <div class="nav-links">
                 <ul class="lista_nav">
@@ -25,13 +25,85 @@
         </nav>
     </header>
 
-    <main>  
-        <h4>MAIN</h4>
-        
+    <main class="main-content-principal">  
+        <div class="main-content-aulas">
+            <form  class="main-form-aulas" action="">
+                <div><h4>Gestion de Aulas</h4></div>
+                
+                <label for="">Codigo de Aula</label>
+                <input type="text">
+
+                <label for="">Nombre de Aula</label>
+                <input type="text">
+
+
+                <label for="">Aire Acondicionado</label>
+                
+                <div style="border: none; margin: 0;">
+                    <label>
+                        <input type="radio" name="opcion" value="si"> Sí
+                    </label>
+                    <label>
+                        <input type="radio" name="opcion" value="no"> No
+                    </label>
+                </div>
+                
+                <label for="">Ubicacion</label>
+                <input type="text">
+
+                <label for="">Capacidad</label>
+                <input type="text">
+
+                <button>Ingresar</button>
+                <button style="background-color: bisque; color: black; font-weight: bold;" >Ver Lista</button>
+
+            </form>
+        </div>
+        <div class="main-content-cursos">
+            <form class="main-form-cursos" action="">
+
+                <h4>Gestion de Cursos</h4>
+
+                <label for="">Sigla</label>
+                <input type="text">
+
+                <label for="">Nombre</label>
+                <input type="text">
+
+                <label for="">Profesor</label>
+                <input type="text">
+
+                <label for="">Cantidad</label>
+                <input type="number">
+
+                <button>Ingresar</button>
+                <button style="background-color: bisque; color: black; font-weight: bold;">Ver Lista</button>
+
+            </form>
+        </div>
     </main>
 
-    <footer>
-       <h4>FOOTER</h4>
+    <footer style="display: flex; gap: 10px; justify-content: space-around;">
+       <div class="footer-content-information-personal"><span style="filter: drop-shadow(2px 4px 6px black);">Creado por Jemerson Rodriguez | UCR | 2025</span></h4></div>
+       <div class="footer-content-informacion-contacto">
+         <ul class="footer-icons">
+            <li>
+                <a href="https://github.com/JemersonRodriguez">
+                    <img class="logo-footer" src="./images/git-icon.svg" alt="Logo Image">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/JemersonRodriguez">
+                    <img class="logo-footer" src="./images/linkedin-icon.svg" alt="Logo Image">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/">
+                    <img class="logo-footer" src="./images/whatsaap-icon.svg" alt="Logo Image">
+                </a>
+            </li>
+        </ul>
+       </div>
     </footer>
 </body>
 </html>

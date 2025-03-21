@@ -11,19 +11,127 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
 header {
-    background-color: aqua;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
 }
 
 header nav {
     display: flex;
+    justify-content: space-around;
 }
 
-main {
-    background-color: blue;
+.nav-links {
+    align-content: center;   
+}
 
+.lista_nav {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-content: center;
+    justify-self: center;
+    text-decoration: none;
+}
+
+.lista_nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.main-content-principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.main-content-aulas {
+    display: flex;
+    text-align: center;
+    border: 2px black;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px 16px rgb(60 55 55 / 10%);
+}
+
+.main-form-aulas {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.main-form-aulas button{
+    margin-top: 10px;
+    padding: 5px;
+    background-color: blue;
+    color: white;
+}
+
+.main-form-aulas div {
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.main-content-cursos {
+    display: flex;
+    text-align: center;
+    border: 2px black;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 12px 16px rgb(60 55 55 / 10%);
+}
+
+.main-form-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main-form-cursos h4 {
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.main-form-cursos button {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: blue;
+    color: white;
 }
 
 footer {
-    background-color: black;
+    padding: 3px;
+    background-color: white;
+    align-items: center;
+    font-weight: bold;
+}
+
+.footer-icons {
+    display: flex; 
+    gap: 25px;
+    list-style: none;
+}
+
+.logo-footer {
+    width: 205x;
+    height: 25px;
+    filter: drop-shadow(2px 4px 6px black);
 }
