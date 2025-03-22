@@ -5,27 +5,27 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Repository.AulaRepository;
-import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.Aula;
+import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.AulaModel;
 
 
 @Service
-public class AulaBDService {
+public class AulaService {
 
     private final AulaRepository aula_repository;
 
-    public AulaBDService (AulaRepository aula_repository) {
+    public AulaService (AulaRepository aula_repository) {
         this.aula_repository = aula_repository;
     }
 
-    public Aula guardar (Aula aula) {
+    public AulaModel guardar (AulaModel aula) {
         return aula_repository.save(aula);
     }
 
-    public List<Aula> listar() {
+    public List<AulaModel> listar() {
         return aula_repository.findAll();
     }
 
-    public Optional<Aula> buscar(Integer codigo) {
+    public Optional<AulaModel> buscar(Integer codigo) {
         return aula_repository.findById(codigo);
     }
 
@@ -33,7 +33,7 @@ public class AulaBDService {
         aula_repository.deleteById(codigo);
     }
 
-    public Aula actualizar(Aula aula) {
+    public AulaModel actualizar(AulaModel aula) {
         if(aula_repository.existsById(aula.getCodigo())) {
             return aula_repository.save(aula);
         }

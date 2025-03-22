@@ -5,23 +5,23 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Repository.AsignarRepository;
-import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.Asignar;
+import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.AsignarModel;
 
 
 @Service
-public class AsignarBDService {
+public class AsignarService {
 
     private final AsignarRepository asignarRepository;
     // Constructor con inyección de dependencia del repositorio
-    public AsignarBDService(AsignarRepository asignarRepository) {
+    public AsignarService(AsignarRepository asignarRepository) {
         this.asignarRepository = asignarRepository;
     }
 
-    public Asignar guardar(Asignar asignar) {
+    public AsignarModel guardar(AsignarModel asignar) {
         return asignarRepository.save(asignar);
     }
 
-    public List<Asignar> listar() {
+    public List<AsignarModel> listar() {
         return asignarRepository.findAll();
     }
 
@@ -29,11 +29,11 @@ public class AsignarBDService {
         asignarRepository.deleteById(id);
     }
 
-    public Optional<Asignar> buscar(Integer id) {
+    public Optional<AsignarModel> buscar(Integer id) {
         return asignarRepository.findById(id);
     }
 
-    public Asignar actualizar(Asignar asignar) {
+    public AsignarModel actualizar(AsignarModel asignar) {
         if (asignarRepository.existsById(asignar.getId())) {
             return asignarRepository.save(asignar);
         } else {
