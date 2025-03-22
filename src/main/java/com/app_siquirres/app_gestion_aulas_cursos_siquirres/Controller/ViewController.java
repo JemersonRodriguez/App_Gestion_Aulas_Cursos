@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class View {
+public class ViewController {
     //Controller que retornara las vistas HTML
     @GetMapping("/")
     public String endpoint_root() {
