@@ -20,6 +20,8 @@ public class AulaModel {
     @Column(name = "aire_acondicionado" , nullable = false)
     private boolean aire_acondicionado;
 
+    public AulaModel() {} //Necesario por defecto por Hibernate
+
     public AulaModel(int codigo, int capacidad, String nombre, String ubicacion, boolean aire_acondicionado) {
         this.codigo = codigo;
         this.capacidad = capacidad;

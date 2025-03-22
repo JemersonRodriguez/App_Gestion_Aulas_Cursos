@@ -18,6 +18,8 @@ public class CursoModel {
     @Column(name = "cantidad_estudiantes" , nullable = false)
     private int cantidad_estudiantes;
 
+    public CursoModel() {} //Necesario por defecto por Hibernate
+
     public CursoModel(String sigla, String nombre, String profesor, int cantidad_estudiantes) {
         this.sigla = sigla;
         this.nombre = nombre;

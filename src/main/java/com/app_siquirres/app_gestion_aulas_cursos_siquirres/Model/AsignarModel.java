@@ -21,6 +21,8 @@ public class AsignarModel {
     @Column(name = "duracion", nullable = false)
     private int duracion;
 
+    public AsignarModel () {} //Necesario por defecto por Hibernate
+
     public AsignarModel (int id , String curso , int aula_id , String dia , String hora , int duracion) {
         this.id = id;
         this.curso = curso;

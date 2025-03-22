@@ -25,8 +25,8 @@ public class AulaService {
         return aula_repository.findAll();
     }
 
-    public Optional<AulaModel> buscar(Integer codigo) {
-        return aula_repository.findById(codigo);
+    public AulaModel buscar(Integer codigo) {
+        return aula_repository.findById(codigo).orElse(null) ;
     }
 
     public void eliminar(Integer codigo) {
