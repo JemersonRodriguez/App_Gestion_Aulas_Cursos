@@ -1,7 +1,6 @@
 package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Repository.AulaRepository;

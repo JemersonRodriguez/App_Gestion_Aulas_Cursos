@@ -1,7 +1,7 @@
 package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestParam; || Para parametros opcionales
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.AulaModel;

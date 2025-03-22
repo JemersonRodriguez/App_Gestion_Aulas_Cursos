@@ -1,7 +1,6 @@
 package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -29,8 +28,8 @@ public class CursoService {
         cursoRepository.deleteById(sigla);
     }
 
-    public Optional<CursoModel> buscar(String sigla) {
-        return cursoRepository.findById(sigla);
+    public CursoModel buscar(String sigla) {
+        return cursoRepository.findById(sigla).orElse(null);
     }
 
     public CursoModel actualizar(CursoModel curso) {
