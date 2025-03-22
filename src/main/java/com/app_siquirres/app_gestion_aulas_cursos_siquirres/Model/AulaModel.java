@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "aula")
-public class Aula {
+public class AulaModel {
     @Id
     @Column(name = "codigo")
     private int codigo;
@@ -20,7 +20,7 @@ public class Aula {
     @Column(name = "aire_acondicionado" , nullable = false)
     private boolean aire_acondicionado;
 
-    public Aula(int codigo, int capacidad, String nombre, String ubicacion, boolean aire_acondicionado) {
+    public AulaModel(int codigo, int capacidad, String nombre, String ubicacion, boolean aire_acondicionado) {
         this.codigo = codigo;
         this.capacidad = capacidad;
         this.nombre = nombre;

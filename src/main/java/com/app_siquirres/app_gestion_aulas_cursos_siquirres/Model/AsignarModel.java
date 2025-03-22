@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "asignacion_aula_curso")
-public class Asignar {
+public class AsignarModel {
     @Id
     private int id;
     @Column(name = "curso", nullable = false)
@@ -21,7 +21,7 @@ public class Asignar {
     @Column(name = "duracion", nullable = false)
     private int duracion;
 
-    public Asignar (int id , String curso , int aula_id , String dia , String hora , int duracion) {
+    public AsignarModel (int id , String curso , int aula_id , String dia , String hora , int duracion) {
         this.id = id;
         this.curso = curso;
         this.aula_id = aula_id;

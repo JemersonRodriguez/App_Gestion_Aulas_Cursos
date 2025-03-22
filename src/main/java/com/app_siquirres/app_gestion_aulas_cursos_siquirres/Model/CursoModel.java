@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "curso")
-public class Curso {
+public class CursoModel {
     @Id
     @Column(name = "sigla")
     private String sigla;
@@ -18,7 +18,7 @@ public class Curso {
     @Column(name = "cantidad_estudiantes" , nullable = false)
     private int cantidad_estudiantes;
 
-    public Curso(String sigla, String nombre, String profesor, int cantidad_estudiantes) {
+    public CursoModel(String sigla, String nombre, String profesor, int cantidad_estudiantes) {
         this.sigla = sigla;
         this.nombre = nombre;
         this.profesor = profesor;
