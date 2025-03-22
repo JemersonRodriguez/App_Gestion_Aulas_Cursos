@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 @Table(name = "aula")
 public class Aula {
     @Id
+    @Column(name = "codigo")
     private int codigo;
     @Column(name = "capacidad", nullable = false)
     private int capacidad;
