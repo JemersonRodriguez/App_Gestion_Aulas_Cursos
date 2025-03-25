@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Gestion Aulas</title>
+    <link rel="stylesheet" href="../css/AulasStyle.css">
+</head>
+<body>
+    <header>        
+        <nav>
+            <div class="logo-container"> 
+                <a href="https://github.com/JemersonRodriguez">
+                    <img style="filter: drop-shadow(2px 4px 6px black);" class="logo" src="../images/git-icon.svg" alt="Logo Image">
+                </a>
+                <h4 style="filter: drop-shadow(2px 4px 6px black);">Sistema Gestion UCR Siquirres</h4>
+            </div>
+            <div class="nav-links">
+                <ul class="lista_nav">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Aulas</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content-principal">
+        <section class="main-content-gestion-aulas">
+            <div class="main-content-crear-aula">
+                <h1 class="title" style="filter: drop-shadow(2px 4px 6px black);">Gestión de Aulas</h1>
+
+                <!-- Formulario para agregar/actualizar aula -->
+                <form class="form" th:action="@{/aula/}" th:object="${aula}"  method="post">
+            
+                    <label for="codigo">Código:</label>
+                    <input type="number" id="codigo" name="codigo" th:field="${aula.codigo}" required>
+
+                    <label for="nombre">Nombre del Aula:</label>
+                    <input type="text" id="nombre" name="nombre" th:field="${aula.nombre}" required>
+
+                    <label for="aire_acondicionado">Aire Acondicionado:</label>
+                    <input type="text" id="aire_acondicionado" name="aire_acondicionado" th:field="${aula.aire_acondicionado}" required>
+
+                    <label for="ubicacion">Ubicacion:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" th:field="${aula.ubicacion}" required>
+
+
+                    <label for="capacidad">Capacidad:</label>
+                    <input type="number" id="capacidad" name="capacidad" th:field="${aula.capacidad}" required>
+
+                    <button type="submit">Guardar Aula</button>
+                    <button type="submit">Buscar Aula</button>
+                </form>
+
+            </div>
+
+            <div class="main-content-lista-aulas">
+                <!-- Listado de aulas -->
+                <h2 class="title" style="filter: drop-shadow(2px 4px 6px black);">Listado de Aulas</h2>
+                    <table class="table" border="1">
+                        <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Aire Acondicionado</th>
+                                    <th>Ubicacion</th>
+                                    <th>Capacidad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                        <tr th:each="aulaPost : ${aulas}">
+                            <td th:text="${aulaPost.codigo}"></td>
+                            <td th:text="${aulaPost.nombre}"></td>
+                            <td th:text="${aulaPost.aire_acondicionado}"></td>
+                            <td th:text="${aulaPost.ubicacion}"></td>
+                            <td th:text="${aulaPost.capacidad}"></td>
+                            <td>
+                            <a th:href="@{/aula/{codigo}(codigo=${aulaPost.codigo})}" style="margin-right: 10px;">Editar</a>
+                            <form th:action="@{/aula/eliminar/{codigo}(codigo=${aulaPost.codigo})}" method="post" style="display:inline;">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button style="border: none; background-color: transparent;" type="submit" class="delete" onclick="return confirm('¿Estás seguro de que deseas eliminar esta aula?')">
+                                    <img class="icon-selector" src="../images/delete-icon.svg" style="width: 20px; height: 20px; cursor: pointer;" alt="icono de eliminar un registro">
+                                </button>
+                            </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        
+        </section>
+        
+        <a class="volver" href="/">Volver al inicio</a>
+    </main>
+
+    <footer style="display: flex; gap: 10px; justify-content: space-around;">
+        <div class="footer-content-information-personal"><span style="filter: drop-shadow(2px 4px 6px black);">Creado por Jemerson Rodriguez | UCR | 2025</span></h4></div>
+        <div class="footer-content-informacion-contacto">
+          <ul class="footer-icons">
+             <li>
+                 <a href="https://github.com/JemersonRodriguez">
+                     <img class="logo-footer" src="../images/git-icon.svg" alt="Logo Image">
+                 </a>
+             </li>
+             <li>
+                 <a href="https://github.com/JemersonRodriguez">
+                     <img class="logo-footer" src="../images/linkedin-icon.svg" alt="Logo Image">
+                 </a>
+             </li>
+             <li>
+                 <a href="https://github.com/">
+                     <img class="logo-footer" src="../images/whatsaap-icon.svg" alt="Logo Image">
+                 </a>
+             </li>
+         </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+.main-content-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+    gap: 90px;
+}
+
+.main-content-gestion-aulas {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    gap: 200px;
+}
+
+.main-content-crear-aula{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content-crear-aula:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    margin-bottom: 35px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+
+.main-content-crear-aula .form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.main-content-lista-aulas {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    padding: 30px;
+}
+
+.table {
+    height: 100%;
+    border-collapse: collapse;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.volver {
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: all 0.3s ease-in-out;
+}
+
+.volver:hover {
+    transform: scale(1.05);
+    background-color: cadetblue;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Codigo generico header y footer */
+
+/* Reseteo de márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+}
+
+header {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links {
+    align-content: center;   
+}
+
+.lista_nav {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-content: center;
+    justify-self: center;
+    text-decoration: none;
+}
+
+.lista_nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+
+
+footer {
+    padding: 3px;
+    background-color: white;
+    align-items: center;
+    font-weight: bold;
+}
+
+.footer-icons {
+    display: flex; 
+    gap: 25px;
+    list-style: none;
+}
+
+.logo-footer {
+    width: 25px; 
+    height: 25px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5)); 
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
+    cursor: pointer; 
+}
+
+.logo-footer:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.7));
+}
+

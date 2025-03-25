@@ -9,6 +9,7 @@ import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service.AulaService;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
 ;
 
-@RestController
+@Controller
 @RequestMapping("/aula")
 public class AulaController {
     private final AulaService aulaService;
@@ -32,18 +34,22 @@ public class AulaController {
     }
 
     @PostMapping("/")
-    public AulaModel crear(@RequestBody AulaModel aula) {
-        return aulaService.guardar(aula);
+    public String crear(@ModelAttribute AulaModel aula) {
+        aulaService.guardar(aula);
+        return "redirect:/view/aulas";
     }
 
-    @DeleteMapping("/{codigo}")
-    public void eliminar(@PathVariable Integer codigo) {
+    @DeleteMapping("/eliminar/{codigo}")
+    public String eliminar(@PathVariable Integer codigo) {
+        //System.out.println("Codigo para elminar" + codigo);
         aulaService.eliminar(codigo);
+        return "redirect:/view/aulas";
     }
 
     @GetMapping("/")
-    public List<AulaModel> listar() {
-        return aulaService.listar();
+    public String listar() {
+        aulaService.listar();
+        return "redirect:/view/aulas";
     }
 
     @PutMapping("/{codigo}")

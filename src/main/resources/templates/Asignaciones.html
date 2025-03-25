@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Gestion Cursos</title>
-    <link rel="stylesheet" href="../css/CursosStyle.css">
+    <title>Pagina Gestion Asignaciones</title>
+    <link rel="stylesheet" href="../css/Asignaciones.css">
 </head>
 <body>
 
@@ -28,23 +28,32 @@
         </nav>
     </header>
 
-
     <main>
-        <div class="main-content-cursos">
+
+        <div class="main-content-asignaciones">
             <form class="main-form-cursos" action="">
 
-                <h4>Gestion de Cursos</h4>
+                <h4>Gestion de Asignaciones</h4>
 
-                <label for="">Sigla</label>
-                <input type="text">
+                <label for="curso_opciones">Curso</label>
+                <select name="curso_opciones" id="curso_opciones">
+                    <option value="">Opcion 1</option>
+                    <option value="">Opcion 2</option>
+                </select>
 
-                <label for="">Nombre</label>
-                <input type="text">
+                <label for="aula_opciones">Aula</label>
+                <select name="aula_opciones" id="aula_opciones">
+                    <option value="">Aula 1</option>
+                    <option value="">Aula 2</option>
+                </select>
 
-                <label for="">Profesor</label>
-                <input type="text">
+                <label for="">Dia</label>
+                <input type="date">
 
-                <label for="">Cantidad</label>
+                <label for="">Hora</label>
+                <input type="time">
+
+                <label for="">Duracion</label>
                 <input type="number">
 
                 <button>Ingresar</button>
@@ -52,6 +61,8 @@
 
             </form>
         </div>
+
+
     </main>
 
     <footer style="display: flex; gap: 10px; justify-content: space-around;">

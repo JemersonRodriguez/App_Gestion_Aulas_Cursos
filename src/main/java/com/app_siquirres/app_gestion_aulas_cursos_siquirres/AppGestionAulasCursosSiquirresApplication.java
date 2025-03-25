@@ -2,7 +2,7 @@ package com.app_siquirres.app_gestion_aulas_cursos_siquirres;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class AppGestionAulasCursosSiquirresApplication {

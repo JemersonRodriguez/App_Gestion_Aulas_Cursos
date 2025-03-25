@@ -13,6 +13,7 @@ import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service.CursoService
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 //import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
-@RestController
+@Controller
 @RequestMapping("curso")
 public class CursoController {
 
@@ -46,7 +47,8 @@ public class CursoController {
     }
 
     @PutMapping("/{sigla}")
-    public CursoModel actualizar(@RequestBody CursoModel curso) {
+    public CursoModel actualizar(@RequestBody CursoModel curso , @PathVariable String sigla) {
+        curso.setSigla(sigla);
         return cursoService.actualizar(curso);
     }
 

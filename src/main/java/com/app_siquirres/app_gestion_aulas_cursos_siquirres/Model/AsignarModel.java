@@ -2,31 +2,45 @@ package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "asignacion_aula_curso")
 public class AsignarModel {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "curso", nullable = false)
-    private String curso;
-    @Column(name = "aula_id", nullable = false)
-    private int aula_id;
+
+    @ManyToOne
+    @JoinColumn(name = "curso", nullable = false)
+    private CursoModel curso;
+
+    @ManyToOne
+    @JoinColumn(name = "aula_id", nullable = false)
+    private AulaModel aula;
+
     @Column(name = "dia", nullable = false)
     private String dia;
+
     @Column(name = "hora", nullable = false)
     private String hora;
+
     @Column(name = "duracion", nullable = false)
     private int duracion;
 
-    public AsignarModel () {} //Necesario por defecto por Hibernate
+    // Constructor necesario por Hibernate
+    public AsignarModel() {
+    }
 
-    public AsignarModel (int id , String curso , int aula_id , String dia , String hora , int duracion) {
-        this.id = id;
+    public AsignarModel(CursoModel curso, AulaModel aula, String dia, String hora, int duracion) {
         this.curso = curso;
-        this.aula_id = aula_id;
+        this.aula = aula;
         this.dia = dia;
         this.hora = hora;
         this.duracion = duracion;
@@ -35,18 +49,23 @@ public class AsignarModel {
     public int getId() {
         return id;
     }
-    public String getCurso() {
+
+    public CursoModel getCurso() {
         return curso;
     }
-    public int getAula_id() {
-        return aula_id;
+
+    public AulaModel getAula() {
+        return aula;
     }
+
     public String getDia() {
         return dia;
     }
+
     public String getHora() {
         return hora;
     }
+
     public int getDuracion() {
         return duracion;
     }
@@ -54,19 +73,37 @@ public class AsignarModel {
     public void setId(int id) {
         this.id = id;
     }
-    public void setCurso(String curso) {
+
+    public void setCurso(CursoModel curso) {
         this.curso = curso;
     }
-    public void setAula_id(int aula_id) {
-        this.aula_id = aula_id;
+
+    public void setAula(AulaModel aula_id) {
+        this.aula = aula_id;
     }
+
     public void setDia(String dia) {
         this.dia = dia;
     }
+
     public void setHora(String hora) {
         this.hora = hora;
     }
+
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    @Override
+    public String toString() {
+        return "AsignarModel{" +
+                "id=" + id +
+                ", curso=" + curso +
+                ", aula=" + aula +
+                ", dia='" + dia + '\'' +
+                ", hora='" + hora + '\'' +
+                ", duracion=" + duracion +
+                '}';
+    }
+
 }
