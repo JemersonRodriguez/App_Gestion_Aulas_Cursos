@@ -4,14 +4,14 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid black;
-    gap: 90px;
+    gap: 50px;
 }
 
 .main-content-gestion-aulas {
     margin-top: 70px;
     display: flex;
     justify-content: space-around;
-    gap: 200px;
+    gap: 100px;
 }
 
 .main-content-crear-aula{
@@ -24,6 +24,7 @@
 
 .main-content-crear-aula:hover {
     transform: scale(1.05);
+    box-shadow: 0px 0px 13px 18px rgb(0 0 0 / 12%);
 }
 
 .title {
@@ -37,7 +38,34 @@
 .main-content-crear-aula .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
+
+.form input {
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-color: cadetblue;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+.form button {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.form button:last-child {
+    background-color: aquamarine;
+}
+
 
 
 
@@ -46,12 +74,19 @@
     flex-direction: column;
     box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
     padding: 30px;
+    transition: all 0.3s ease-in-out;
 }
+
+.main-content-lista-aulas:hover {
+    transform: scale(1.06);
+    box-shadow: 0px 0px 13px 18px rgb(0 0 0 / 12%);
+}
+
 
 .table {
     height: 100%;
     border-collapse: collapse;
-    filter: drop-shadow(2px 4px 6px black);
+    text-align: center;
 }
 
 .volver {
@@ -62,12 +97,22 @@
     text-decoration: none;
     box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
     transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
 }
 
 .volver:hover {
     transform: scale(1.05);
     background-color: cadetblue;
     color: white;
+}
+
+.icon-selector {
+    filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.7));
+    transition: all 0.4s ease-in-out;
+}
+
+.icon-selector:hover {
+    transform: scale(1.05);
 }
 
 

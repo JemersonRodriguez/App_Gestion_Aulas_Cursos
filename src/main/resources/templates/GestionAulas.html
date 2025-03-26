@@ -33,27 +33,30 @@
                 <h1 class="title" style="filter: drop-shadow(2px 4px 6px black);">Gestión de Aulas</h1>
 
                 <!-- Formulario para agregar/actualizar aula -->
-                <form class="form" th:action="@{/aula/}" th:object="${aula}"  method="post">
-            
+                <form class="form" th:action="@{/aula/}" th:object="${aula}" method="post">
+
                     <label for="codigo">Código:</label>
-                    <input type="number" id="codigo" name="codigo" th:field="${aula.codigo}" required>
+                    <input type="number" id="codigo" name="codigo" th:field="*{codigo}" required>
 
                     <label for="nombre">Nombre del Aula:</label>
-                    <input type="text" id="nombre" name="nombre" th:field="${aula.nombre}" required>
+                    <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
 
                     <label for="aire_acondicionado">Aire Acondicionado:</label>
-                    <input type="text" id="aire_acondicionado" name="aire_acondicionado" th:field="${aula.aire_acondicionado}" required>
+                    <select style="width: 100%; padding-top: 2px; padding-bottom: 2px; border-color: cadetblue; text-align: center;" name="aire_acondicionado" id="aire_acondicionado" th:field="*{aire_acondicionado}" required>
+                        <option value="true" th:selected="${aula.aire_acondicionado}">Sí Posee</option>
+                        <option value="false" th:selected="${!aula.aire_acondicionado}">No Posee</option>
+                    </select>
 
-                    <label for="ubicacion">Ubicacion:</label>
-                    <input type="text" id="ubicacion" name="ubicacion" th:field="${aula.ubicacion}" required>
 
+                    <label for="ubicacion">Ubicación:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" th:field="*{ubicacion}" required>
 
                     <label for="capacidad">Capacidad:</label>
-                    <input type="number" id="capacidad" name="capacidad" th:field="${aula.capacidad}" required>
+                    <input type="number" id="capacidad" name="capacidad" th:field="*{capacidad}" required>
 
                     <button type="submit">Guardar Aula</button>
-                    <button type="submit">Buscar Aula</button>
-                </form>
+                    <button type="submit" formaction="@{/aula/buscar}" formmethod="get">Buscar Aula</button>
+                </form> 
 
             </div>
 
@@ -78,8 +81,10 @@
                             <td th:text="${aulaPost.aire_acondicionado}"></td>
                             <td th:text="${aulaPost.ubicacion}"></td>
                             <td th:text="${aulaPost.capacidad}"></td>
-                            <td>
-                            <a th:href="@{/aula/{codigo}(codigo=${aulaPost.codigo})}" style="margin-right: 10px;">Editar</a>
+                            <td style="padding: 9px;">
+                            <a th:href="@{/aula/{codigo}(codigo=${aulaPost.codigo})}" style="margin-right: 10px; text-decoration: none;">
+                                <img class="icon-selector" src="../images/editar-image.png" style="width: 20px; height: 20px;" alt="">
+                            </a>
                             <form th:action="@{/aula/eliminar/{codigo}(codigo=${aulaPost.codigo})}" method="post" style="display:inline;">
                                 <input type="hidden" name="_method" value="delete"/>
                                 <button style="border: none; background-color: transparent;" type="submit" class="delete" onclick="return confirm('¿Estás seguro de que deseas eliminar esta aula?')">
