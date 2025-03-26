@@ -1,36 +1,128 @@
-.main-content-cursos {
-    display: flex;
-    text-align: center;
-    border: 2px black;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 12px 16px rgb(60 55 55 / 10%);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.main-content-cursos:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 15px 20px rgb(60 55 55 / 20%); 
-}
-
-.main-form-cursos {
+.main-content-principal {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-}
-
-.main-form-cursos h4 {
-    margin: 20px;
-    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
     border-bottom: 2px solid black;
+    gap: 50px;
 }
 
-.main-form-cursos button {
-    padding: 5px;
-    margin-top: 10px;
-    background-color: blue;
+.main-content-gestion-aulas {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+@media (max-width: 900px) {
+    .main-content-gestion-aulas {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        transform: scale(1.02);
+    }
+
+    
+}
+
+.main-content-crear-aula{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content-crear-aula:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 13px 18px rgb(0 0 0 / 12%);
+}
+
+.title {
+    margin-bottom: 35px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+
+.main-content-crear-aula .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.form input {
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-color: cadetblue;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+.form button {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.form button:last-child {
+    background-color: aquamarine;
+}
+
+.main-content-lista-aulas {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    padding: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content-lista-aulas:hover {
+    transform: scale(1.06);
+    box-shadow: 0px 0px 13px 18px rgb(0 0 0 / 12%);
+}
+
+
+.table {
+    height: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.volver {
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 0px 8px 9px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.volver:hover {
+    transform: scale(1.05);
+    background-color: cadetblue;
     color: white;
 }
+
+.icon-selector {
+    filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.7));
+    transition: all 0.4s ease-in-out;
+}
+
+.icon-selector:hover {
+    transform: scale(1.05);
+}
+
 
 /* Codigo generico header y footer */
 
@@ -86,6 +178,13 @@ header nav {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.lista_nav li a:hover {
+    transform: scale(1.08);
+    font-size: 16px;
     filter: drop-shadow(2px 4px 6px black);
 }
 

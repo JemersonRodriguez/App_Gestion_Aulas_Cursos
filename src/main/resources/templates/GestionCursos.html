@@ -19,38 +19,79 @@
             </div>
             <div class="nav-links">
                 <ul class="lista_nav">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Aulas</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/view/">Inicio</a></li>
+                    <li><a href="/view/aulas">Aulas</a></li>
+                    <li><a href="/view/cursos">Cursos</a></li>
+                    <li><a href="/view/asignaciones">Asignaciones</a></li>
+                    <li><a href="/view/contacto">Contacto</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <div class="main-content-cursos">
-            <form class="main-form-cursos" action="">
+    <main class="main-content-principal">
+        <section class="main-content-gestion-aulas">
+            <div class="main-content-crear-aula">
+                <h1 class="title" style="filter: drop-shadow(2px 4px 6px black);">Gestión de Cursos</h1>
 
-                <h4>Gestion de Cursos</h4>
+                <!-- Formulario para agregar/actualizar aula -->
+                <form class="form" th:action="@{/curso/}" th:object="${curso}" method="post">
 
-                <label for="">Sigla</label>
-                <input type="text">
+                    <label for="sigla">Sigla:</label>
+                    <input type="text" id="sigla" name="sigla" th:field="*{sigla}" required>
 
-                <label for="">Nombre</label>
-                <input type="text">
+                    <label for="nombre">Nombre del Curso:</label>
+                    <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
 
-                <label for="">Profesor</label>
-                <input type="text">
+                    <label for="profesor">Profesor:</label>
+                    <input type="text" id="profesor" name="profesor" th:field="*{profesor}" required>
 
-                <label for="">Cantidad</label>
-                <input type="number">
+                    <label for="cantidad_estudiantes">Cantidad:</label>
+                    <input type="number" id="cantidad_estudiantes" name="cantidad_estudiantes" th:field="*{cantidad_estudiantes}" required>
 
-                <button>Ingresar</button>
-                <button style="background-color: bisque; color: black; font-weight: bold;">Ver Lista</button>
+                    <button type="submit">Guardar Curso</button>
+                </form> 
 
-            </form>
-        </div>
+            </div>
+
+            <div class="main-content-lista-aulas">
+                <!-- Listado de aulas -->
+                <h2 class="title" style="filter: drop-shadow(2px 4px 6px black);">Listado de Cursos</h2>
+                    <table class="table" border="1">
+                        <thead>
+                                <tr>
+                                    <th>Sigla</th>
+                                    <th>Nombre</th>
+                                    <th>Profesor</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                        <tr th:each="curso : ${cursos}">
+                            <td th:text="${curso.sigla}"></td>
+                            <td th:text="${curso.nombre}"></td>
+                            <td th:text="${curso.profesor}"></td>
+                            <td th:text="${curso.cantidad_estudiantes}"></td>
+                            <td style="padding: 9px;">
+                            <a th:href="@{/curso/{sigla}(sigla=${curso.sigla})}" style="margin-right: 10px; text-decoration: none;">
+                                <img class="icon-selector" src="../images/editar-image.png" style="width: 20px; height: 20px;" alt="">
+                            </a>
+                            <form th:action="@{/curso/{sigla}(sigla=${curso.sigla})}" method="post" style="display:inline;">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button style="border: none; background-color: transparent;" type="submit" class="delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este curso?')">
+                                    <img class="icon-selector" src="../images/delete-icon.svg" style="width: 20px; height: 20px; cursor: pointer;" alt="icono de eliminar un registro">
+                                </button>
+                            </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        
+        </section>
+        
+        <a class="volver" href="/">Volver al inicio</a>
     </main>
 
     <footer style="display: flex; gap: 10px; justify-content: space-around;">

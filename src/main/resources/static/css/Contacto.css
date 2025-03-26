@@ -1,3 +1,6 @@
+
+/* Codigo generico header y footer */
+
 /* Reseteo de márgenes y rellenos por defecto */
 * {
     margin: 0;
@@ -35,6 +38,7 @@ header nav {
 
 .nav-links {
     align-content: center;   
+    
 }
 
 .lista_nav {
@@ -60,27 +64,19 @@ header nav {
     filter: drop-shadow(2px 4px 6px black);
 }
 
-.main-content-principal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid black;
-    gap: 90px;
-}
-
 footer {
     padding: 3px;
     background-color: white;
     align-items: center;
     font-weight: bold;
-    border-top: 2px solid black;
+    border-top: 3px solid black;
 }
 
 .footer-icons {
     display: flex; 
     gap: 25px;
     list-style: none;
-}
+}                   
 
 .logo-footer {
     width: 25px; 
@@ -94,3 +90,4 @@ footer {
     transform: scale(1.08);
     filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.7));
 }
+

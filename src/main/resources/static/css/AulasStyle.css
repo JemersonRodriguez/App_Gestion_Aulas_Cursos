@@ -14,6 +14,17 @@
     gap: 100px;
 }
 
+@media (max-width: 900px) {
+    .main-content-gestion-aulas {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        transform: scale(1.02);
+    }
+
+    
+}
+
 .main-content-crear-aula{
     display: flex;
     flex-direction: column;
@@ -65,9 +76,6 @@
 .form button:last-child {
     background-color: aquamarine;
 }
-
-
-
 
 .main-content-lista-aulas {
     display: flex;
@@ -169,6 +177,7 @@ header nav {
 
 .nav-links {
     align-content: center;   
+    
 }
 
 .lista_nav {
@@ -184,10 +193,15 @@ header nav {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-
+.lista_nav li a:hover {
+    transform: scale(1.08);
+    font-size: 16px;
+    filter: drop-shadow(2px 4px 6px black);
+}
 
 footer {
     padding: 3px;
