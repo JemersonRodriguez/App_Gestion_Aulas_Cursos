@@ -17,11 +17,8 @@ import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service.CursoService
 import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-
 @Controller
-@RequestMapping("view")
+@RequestMapping("/view")
 public class ViewController {
     
     private final AulaService aulaService;

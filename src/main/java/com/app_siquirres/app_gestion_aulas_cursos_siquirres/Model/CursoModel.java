@@ -1,17 +1,17 @@
 package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model;
 
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "curso")
 public class CursoModel {
+
     @Id
     @Column(name = "sigla")
     private String sigla;
@@ -22,52 +22,63 @@ public class CursoModel {
     @Column(name = "profesor", nullable = false)
     private String profesor;
 
-    @Column(name = "cantidad_estudiantes", nullable = false)
-    private int cantidad_estudiantes;
+    @Column(name = "cantidadestudiantes", nullable = false)
+    private int cantidadestudiantes;
 
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
     private List<AsignarModel> asignaciones;
 
+    // Constructor vacío requerido por Hibernate
     public CursoModel() {
-    } // Necesario por defecto por Hibernate
+    }
 
-    public CursoModel(String sigla, String nombre, String profesor, int cantidad_estudiantes) {
+    // Constructor completo
+    public CursoModel(String sigla, String nombre, String profesor, int cantidadestudiantes) {
         this.sigla = sigla;
         this.nombre = nombre;
         this.profesor = profesor;
-        this.cantidad_estudiantes = cantidad_estudiantes;
+        this.cantidadestudiantes = cantidadestudiantes;
     }
 
+    // Getters y setters
     public String getSigla() {
         return sigla;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getProfesor() {
-        return profesor;
-    }
-
-    public int cantidad_estudiantes() {
-        return cantidad_estudiantes;
     }
 
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getProfesor() {
+        return profesor;
     }
 
     public void setProfesor(String profesor) {
         this.profesor = profesor;
     }
 
-    public void cantidad_estudiantes(int cantidad_estudiantes) {
-        this.cantidad_estudiantes = cantidad_estudiantes;
+    public int getCantidadestudiantes() {
+        return cantidadestudiantes;
+    }
+
+    public void setCantidadestudiantes(int cantidadestudiantes) {
+        this.cantidadestudiantes = cantidadestudiantes;
+    }
+
+    public List<AsignarModel> getAsignaciones() {
+        return asignaciones;
+    }
+
+    public void setAsignaciones(List<AsignarModel> asignaciones) {
+        this.asignaciones = asignaciones;
     }
 
     @Override
@@ -76,7 +87,7 @@ public class CursoModel {
                 "sigla='" + sigla + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", profesor='" + profesor + '\'' +
-                ", cantidad_estudiantes=" + cantidad_estudiantes +
+                ", cantidad_estudiantes=" + cantidadestudiantes +
                 '}';
-    } //Quitar las impresiones correspondientes a otras tablas
+    }
 }

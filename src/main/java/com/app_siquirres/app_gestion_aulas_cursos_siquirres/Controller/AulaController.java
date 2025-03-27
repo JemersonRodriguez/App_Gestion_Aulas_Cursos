@@ -2,12 +2,12 @@ package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 // import org.springframework.web.bind.annotation.RequestParam; || Para parametros opcionales
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.RestController;
 
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Model.AulaModel;
 import com.app_siquirres.app_gestion_aulas_cursos_siquirres.Service.AulaService;
 
-import java.util.List;
+//import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-;
 
 @Controller
 @RequestMapping("/aula")
