@@ -2,6 +2,7 @@ package com.app_siquirres.app_gestion_aulas_cursos_siquirres.Controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Controller;
 //import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -31,9 +33,10 @@ public class CursoController {
         this.cursoService = cursoService;
     }
 
-    @PostMapping("/")
-    public CursoModel crear(@RequestBody CursoModel curso) {
-        return cursoService.guardar(curso);
+    @PostMapping("/") //Se usa ModelAtributte por que es informacion de un form y esta no vija de la mmisma forma como un JSON que se recibiria normalmente con un @RequestBody
+    public String crear(@ModelAttribute CursoModel curso) {
+         cursoService.guardar(curso);
+         return "redirect:/view/aulas";
     }
 
     @GetMapping("/")
